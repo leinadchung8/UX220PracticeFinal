@@ -1,1 +1,47 @@
-<!-- rewrite this document with the required content -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tim Berners-Lee and the World Wide Web</title>
+</head>
+<body>
+
+<main>
+    <h1>About Tim Berners-Lee and the World Wide Web</h1>
+
+    <a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee" target="_blank">
+        <img src="path-to-tim-berners-lee-image.jpg" alt="Tim Berners-Lee" style="width:200px; height:auto;">
+    </a>
+
+    <h2>The Invention of the World Wide Web</h2>
+    <p>Tim Berners-Lee invented the World Wide Web, an internet-based hypermedia initiative for global information sharing while at CERN, the European Particle Physics Laboratory, in 1989. The web was originally conceived and developed to meet the demand for automated information-sharing between scientists in universities and institutes around the world.</p>
+    
+    <h3>Key Components of the World Wide Web</h3>
+    <dl>
+        <dt>HTML (HyperText Markup Language)</dt>
+        <dd>- the standard markup language for documents designed to be displayed in a web browser.</dd>
+        <dt>URI (Uniform Resource Identifier)</dt>
+        <dd>- a string of characters that unambiguously identifies a particular resource.</dd>
+        <dt>HTTP (HyperText Transfer Protocol)</dt>
+        <dd>- the foundation of data communication for the World Wide Web.</dd>
+    </dl>
+</main>
+
+<footer>
+    <copyright-year></copyright-year>
+</footer>
+
+<script>
+    class CopyrightYear extends HTMLElement {
+        connectedCallback() {
+            const year = new Date().getFullYear();
+            this.innerHTML = `&copy; ${year} - All rights reserved.`;
+        }
+    }
+
+    customElements.define("copyright-year", CopyrightYear);
+</script>
+
+</body>
+</html>
