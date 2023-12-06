@@ -1,34 +1,45 @@
 <!DOCTYPE html>
-
+<html>
 <head>
 </head>
-
 <body>
     <h1>There are <x-daysleft></x-daysleft> day(s) left until PI Day (<x-piday></x-piday>).</h1>
 </body>
 <script>
-    class DaysLeft extends HTMLElement{
-        connectedCallback(){
-            let today=new Date();
-            let nPiDay=new Date(today.getFullYear(), 2, 14);
-            let nSeconds = 1000*60*60*24;
-            let nDaysLeft = Math.ceil((nPiDay.getTime()-today.getTime())/(nSeconds));
-            console.log(nDaysLeft); //logs the value we are looking for in our heading
-            // put your "secret sauce here to get this in to the document
+    class DaysLeft extends HTMLElement {
+        connectedCallback() {
+            let today = new Date();
+            let nPiDay = new Date(today.getFullYear(), 2, 14); // PI Day of the current year
+            let nSeconds = 1000 * 60 * 60 * 24;
+            let nDaysLeft = Math.ceil((nPiDay.getTime() - today.getTime()) / nSeconds);
+
+            // Check if PI Day has already happened this year
+            if (nDaysLeft < 0) {
+                // If it has, set nPiDay to next year's PI Day
+                nPiDay = new Date(today.getFullYear() + 1, 2, 14);
+                // Recalculate nDaysLeft
+                nDaysLeft = Math.ceil((nPiDay.getTime() - today.getTime()) / nSeconds);
+            }
+
+            // Set the innerHTML to the calculated days left
+            this.innerHTML = nDaysLeft;
         }
     }
 
     customElements.define("x-daysleft", DaysLeft);
 
-    class PiDay extends HTMLElement{
-        connectedCallback(){
-            let today=new Date();
-            let nPiDay=new Date(today.getFullYear(), 2, 14);
+    class PiDay extends HTMLElement {
+        connectedCallback() {
+            let today = new Date();
+            let nPiDay = new Date(today.getFullYear(), 2, 14);
+            // If PI Day has already happened this year, set nPiDay to next year's PI Day
+            if ((nPiDay.getTime() - today.getTime()) < 0) {
+                nPiDay = new Date(today.getFullYear() + 1, 2, 14);
+            }
             this.innerHTML = nPiDay.toLocaleDateString('en-CA');
         }
     }
 
     customElements.define("x-piday", PiDay);
 </script>
-
 </html>
