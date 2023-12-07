@@ -10,16 +10,16 @@
 <main>
     <h1>About Tim Berners-Lee and the World Wide Web</h1>
 
-    <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Sir_Tim_Berners-Lee_%28cropped%29.jpg/220px-Sir_Tim_Berners-Lee_%28cropped%29.jpg>
-        <img crossorigin="anonymous" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Sir_Tim_Berners-Lee_%28cropped%29.jpg/220px-Sir_Tim_Berners-Lee_%28cropped%29.jpg"alt="Tim Berners-Lee" style="width:200px; height:auto;">
+    <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Sir_Tim_Berners-Lee_(cropped).jpg/440px-Sir_Tim_Berners-Lee_(cropped).jpg" target="_blank">
+        <img crossorigin="anonymous" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Sir_Tim_Berners-Lee_(cropped).jpg/440px-Sir_Tim_Berners-Lee_(cropped).jpg" alt="Tim Berners-Lee" style="width:200px; height:auto;">
     </a>
 
     <h2>The Invention of the World Wide Web</h2>
-    <p>Tim Berners-Lee invented the World Wide Web, an internet-based hypermedia initiative for global information sharing while at CERN, the European Particle Physics Laboratory, in 1989. The web was originally conceived and developed to meet the demand for automated information-sharing between scientists in universities and institutes around the world.</p>
-    
+    <p>Tim Berners-Lee invented the World Wide Web,an internet-based hypermedia initiative for global information sharing while at CERN, the European Particle Physics Laboratory, in 1989. The web was originally conceived and developed to meet the demand for automated information-sharing between scientists in universities and institutes around the world.</p>
+
     <h3>Key Components of the World Wide Web</h3>
     <dl>
-        <dt>HTML (HyperText Markup Language)</dt>
+         <dt>HTML (HyperText Markup Language)</dt>
         <dd>- the standard markup language for documents designed to be displayed in a web browser.</dd>
         <dt>URI (Uniform Resource Identifier)</dt>
         <dd>- a string of characters that unambiguously identifies a particular resource.</dd>
@@ -27,7 +27,6 @@
         <dd>- the foundation of data communication for the World Wide Web.</dd>
     </dl>
 </main>
-
 <footer>
     <copyright-year></copyright-year>
 </footer>
@@ -36,7 +35,7 @@
     class CopyrightYear extends HTMLElement {
         connectedCallback() {
             const year = new Date().getFullYear();
-            this.innerHTML = `&copy; ${year} - All rights reserved.`;
+            this.innerHTML = &copy; ${year} - All rights reserved.;
         }
     }
 
